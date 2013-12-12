@@ -14,7 +14,8 @@ fi
 # find the tokens in the ifconfig output.
 for mytoken in  $(ifconfig "$interface")
 do
-	if [[ $mytoken =~ addr:+([0-9])\.+([0-9])\.+([0-9])\.+([0-9]) ]]; then
+#	if [[ $mytoken =~ ip:+([0-9])\.+([0-9])\.+([0-9])\.+([0-9]) ]]; then
+	if [[ $mytoken =~ inet[[:space:]]([0-9])\.+([0-9])\.+([0-9])\.+([0-9]) ]]; then
 		# find the token which is addr:xx.xx.xx.xx
 		#echo $mytoken
 		myip=${mytoken##addr:}
