@@ -8,7 +8,9 @@
 
 echo "Number of args is $#"
 
-if [ $# -gt 0 ]; then
+# alternative is to use this
+#if [ $# -gt 0 ]; then
+if (($#)); then
 	echo "args are $@"
 	args=("$@")
 	for ((i=0; i<$#; i++));
